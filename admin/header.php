@@ -41,12 +41,12 @@
       </div>
       <button class="dropdown-btn text-light"><i class="fas fa-user-circle"></i> User &nbsp<i class="fa fa-caret-right"></i></button>
       <div class="dropdown-container">
-        <a href="#" class="text-light"><i class="fas fa-users"></i> User Guru</a>
-        <a href="#" class="text-light"><i class="fas fa-users"></i> User Siswa</a>
+        <a href="#" class="text-light"><i class="fas fa-users"></i> Guru</a>
+        <a href="#" class="text-light"><i class="fas fa-users"></i> Siswa</a>
       </div>
       <button class="dropdown-btn text-light"><i class="fas fa-cog"></i> Setting &nbsp<i class="fa fa-caret-right"></i></button>
       <div class="dropdown-container">
-        <a href="#" class="text-light"><i class="fas fa-user-tie"></i> Administrator</a>
+        <a href="admin.php" class="text-light"><i class="fas fa-user-tie"></i> Administrator</a>
       </div>
       <hr class="my-2" style="background-color: white;">
       <a class="nav-link text-light" href="logout.php"><i class="fas fa-running"></i> Logout</a>

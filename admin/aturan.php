@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4 my-3">
           <div class="px-4 py-2 bg-white rounded shadow-beranda">
-            <b><i class="far fa-smile"></i> Nilai Kelulusan</b><hr class="mt-1 font-weight-bold">
+            <b><i class="fas fa-database"></i> Nilai Kelulusan</b><hr class="mt-1 font-weight-bold">
           </div>
         </div>
       </div>
