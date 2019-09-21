@@ -26,7 +26,7 @@
           CBT
         </div>
         <div class="mt-1">
-          <input type="text" class="rounded-0" style="width:250px; padding:7px;" placeholder="Masukkan Username">
+          <input type="text" class="rounded-0" style="width:250px; padding:7px;" placeholder="Masukkan Username" autofocus>
         </div>
         <div class="mt-1">
           <input type="password" class="rounded-0" style="width:250px; padding:7px;" placeholder="Masukkan Password">
