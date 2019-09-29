@@ -1,6 +1,6 @@
 <?php include '../../admin/header.php' ;?>
 <div class="main mb-5">
-  <h5 class="text-center mb-3 mt-4"><i class="fas fa-question"></i> Bank Soal</h5>
+  <h5 class="text-center mt-3"><i class="fas fa-question"></i> Bank Soal</h5>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-9 my-3">
@@ -58,23 +58,23 @@
                       <label class="col-md-2">Soal No. <b><?php echo $noUrut;?></b></label>
                       <textarea class="col-md-8" rows="3" name="soal" style="padding:2px;"></textarea>
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group mt-1">
                       <label class="col-md-2">A</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="a">
                       <label class="col-md-2">C</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="c">
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group">
                       <label class="col-md-2">B</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="b">
                       <label class="col-md-2">D</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="d">
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group">
                       <label class="col-md-2">Jawaban</label>
                       <input style="padding:2px; height:25px;" class="col-md-5" type="text" name="jawaban">
                     </div>
-                    <div class="input-group my-2">
+                    <div class="input-group mt-1">
                       <label class="col-md-2 form-control-plaintext"></label>
                       <input type="submit" name="btn_simpan" value="Simpan" class="btn btn-dark mr-2"/>
                       <input type="reset" name="reset" value="Batal" class="btn btn-light"/>
@@ -105,7 +105,7 @@
                 $sql = "select * from $pilihtb";
                 $query = mysqli_query($soalconnect,$sql);
                 echo "<fieldset>";
-                echo "<table class='table table-sm'>
+                echo "<table class='table table-sm table-bordered'>
                         <thead>
                           <tr>
                             <th>No</th>
@@ -181,23 +181,23 @@
                       <label class="col-md-2">Soal No. <b><?php echo $_GET['no'];?></b></label>
                       <textarea class="col-md-8" rows="3" name="soal" style="padding:2px;" ><?php echo $usr3['soal'] ;?></textarea>
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group mt-1">
                       <label class="col-md-2">A</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="a" value="<?php echo $usr3['a']; ?>">
                       <label class="col-md-2">C</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="c" value="<?php echo $usr3['c']; ?>">
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group">
                       <label class="col-md-2">B</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="b" value="<?php echo $usr3['b']; ?>">
                       <label class="col-md-2">D</label>
                       <input style="padding:2px; height:25px;" class="col-md-3" type="text" name="d" value="<?php echo $usr3['d']; ?>">
                     </div>
-                    <div class="input-group my-1">
+                    <div class="input-group">
                       <label class="col-md-2">Jawaban</label>
                       <input style="padding:2px; height:25px;" class="col-md-5" type="text" name="jawaban" value="<?php echo $usr3['jawaban']; ?>">
                     </div>
-                    <div class="input-group my-3">
+                    <div class="input-group mt-1">
                       <label class="col-md-2 form-control-plaintext"></label>
                       <input type="submit" value="Simpan Perubahan" class="btn btn-dark mr-2" name="btn_ubah"/>
                       <!--<input type="submit" value="Simpan Perubahan" class="btn btn-dark"/>-->
@@ -244,8 +244,6 @@
             ?>
 
           </div>
-          <hr>
-
         </div>
       </div>
       <div class="col-md-3 my-3">

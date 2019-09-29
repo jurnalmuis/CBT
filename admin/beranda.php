@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
   <div class="main mb-5">
-    <h5 class="text-center mb-3 mt-4"><i class="fas fa-tachometer-alt"></i> Dashboard</h5>
+    <h5 class="text-center mt-3"><i class="fas fa-tachometer-alt"></i> Dashboard</h5>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 my-3">

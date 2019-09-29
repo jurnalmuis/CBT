@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
   <div class="main mb-5">
-    <h5 class="text-center mb-3 mt-4"><i class="fas fa-user-tie"></i> Administrator</h5>
+    <h5 class="text-center mt-3"><i class="fas fa-user-tie"></i> Administrator</h5>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9 my-3">
@@ -45,26 +45,26 @@
                       $admcode = $char1 . sprintf("%03s", $noUrut);
                       echo $admcode;
                       ?>" hidden>
-                      <div class="input-group my-2">
+                      <div class="input-group">
                         <label class="col-md-12 text-center font-weight-bold"><i class="fas fa-plus-circle"></i> Tambah Admin</label>
                       </div>
-                      <div class="input-group my-2">
-                        <label class="col-md-2 form-control-plaintext">Username</label>
-                        <input class="col-md-4 form-control rounded" type="text" name="Username">
-                        <label class="col-md-1 form-control-plaintext">Nama</label>
-                        <input class="col-md-4 form-control rounded" type="text" name="Nama_Akun">
+                      <div class="input-group">
+                        <label class="col-md-2">Username</label>
+                        <input style="padding:2px; height:25px;"  class="col-md-4" type="text" name="Username">
+                        <label class="col-md-1">Nama</label>
+                        <input style="padding:2px; height:25px;"  class="col-md-4" type="text" name="Nama_Akun">
                       </div>
-                      <div class="input-group my-2">
-                        <label class="col-md-2 form-control-plaintext">Password</label>
-                        <input class="col-md-4 form-control rounded" type="password" name="Password">
-                        <label class="col-md-1 form-control-plaintext">Status</label>
+                      <div class="input-group">
+                        <label class="col-md-2 ">Password</label>
+                        <input style="padding:2px; height:25px;" class="col-md-4" type="password" name="Password">
+                        <label class="col-md-1 ">Status</label>
                         <!--<input class="col-md-5 form-control rounded" type="text" name="Status">-->
-                        <select name="Status" class="col-md-4 form-control rounded"  value="'<?php echo $status;?>'">
+                        <select style="padding:2px; height:25px;" name="Status" class="col-md-4 form-control rounded-0"  value="'<?php echo $status;?>'">
                           <option>Aktif</option>
                           <option>Tidak Aktif</option>
                         </select>
                       </div>
-                      <div class="input-group my-3">
+                      <div class="input-group mt-1">
                         <label class="col-md-2 "></label>
                         <input type="submit" name="btn_simpan" value="Simpan" class="btn btn-dark mr-2"/>
                         <input type="reset" name="reset" value="Batal" class="btn btn-light"/>
@@ -101,9 +101,10 @@
                   $query = "select * from usr_admin LIMIT $posisi,$batas";
                   $tampil = mysqli_query($connectdb,$query);
                   echo "<fieldset>";
-                  echo "<table class='table table-sm'>
+                  echo "<table class='table table-sm table-bordered'>
                           <thead>
                             <tr>
+                              <th>No </th>
                               <th>Username</th>
                               <th>Nama Akun</th>
                               <th>Status</th>
@@ -114,6 +115,7 @@
                   while($data = mysqli_fetch_array($tampil)){
                     ?>
                     <tr>
+                      <td><?php echo $no++;?></td>
                       <td><?php echo $data['Username'];?></td>
                       <td><?php echo $data['Nama_Akun'];?></td>
                       <td><?php echo $data['Status'];?></td>
@@ -129,7 +131,7 @@
                   $query2 = mysqli_query($connectdb, "select * from usr_admin");
                   $jmldata = mysqli_num_rows($query2);
                   $jmlhalaman = ceil($jmldata/$batas);
-                  echo "<ul class='pagination pagination-sm'><li class='page-item'><a class='page-link'>Halaman = </a></li>";
+                  echo "<ul class='pagination pagination-sm'><li class='page-item disabled'><a class='page-link text-dark'>Halaman = </a></li>";
                   for($i=1;$i<=$jmlhalaman;$i++)
                   if($i != $halaman){
                     echo " <li class='page-item'><a class='page-link' href=\"admin.php?aksi=create&halaman=$i\">$i</a></li> ";
@@ -165,6 +167,7 @@
                   }
                   // tampilan ubah
                   if(isset($_GET['IDADMIN'])){
+                    $halaman = $_GET['halaman'];
                     $idadm = $_GET['IDADMIN'];
                     $data3 = mysqli_query($connectdb,"select * from usr_admin where IDADMIN='$idadm'");
                     $usr3 = mysqli_fetch_array($data3);
@@ -172,29 +175,30 @@
                     ?>
                     <form action="" method="post">
                       <fieldset>
-                        <div class="input-group my-1">
+                        <div class="input-group">
                           <label class="col-md-12 text-center font-weight-bold"><i class="fas fa-edit"></i> Ubah Admin</label>
                         </div>
                       <input type="text" name="IDADMIN" value="<?php echo $usr3['IDADMIN']; ?>" hidden>
-                      <div class="input-group my-2">
-                        <label class="col-md-2 form-control-plaintext">Username</label>
-                        <input class="col-md-4 form-control rounded" type="text" name="Username" value="<?php echo $usr3['Username']; ?>">
-                        <label class="col-md-1 form-control-plaintext">Nama</label>
-                        <input class="col-md-4 form-control rounded" type="text" name="Nama_Akun" value="<?php echo $usr3['Nama_Akun']; ?>">
+                      <div class="input-group">
+                        <label class="col-md-2">Username</label>
+                        <input style="padding:2px; height:25px;" class="col-md-4" type="text" name="Username" value="<?php echo $usr3['Username']; ?>">
+                        <label class="col-md-1">Nama</label>
+                        <input style="padding:2px; height:25px;" class="col-md-4" type="text" name="Nama_Akun" value="<?php echo $usr3['Nama_Akun']; ?>">
                       </div>
-                      <div class="input-group my-2">
-                        <label class="col-md-2 form-control-plaintext">Password</label>
-                        <input class="col-md-4 form-control rounded" type="password" name="Password" value="<?php echo $usr3['Password']; ?>">
-                        <label class="col-md-1 form-control-plaintext">Status</label>
+                      <div class="input-group">
+                        <label class="col-md-2">Password</label>
+                        <input style="padding:2px; height:25px;" class="col-md-4" type="password" name="Password" value="<?php echo $usr3['Password']; ?>">
+                        <label class="col-md-1">Status</label>
                         <!--<input class="col-md-5 form-control rounded" type="text" name="Status" value="<?php //echo $usr3['Status']; ?>">-->
-                        <select id="Status" name="Status" class="col-md-4 form-control rounded">
+                        <select id="Status" style="padding:2px; height:25px;" name="Status" class="col-md-4 form-control rounded-0 text-dark">
                             <option <?php if($select == "Aktif") echo 'selected' ;?> value="Aktif">Aktif</option>
                             <option <?php if($select == "Tidak Aktif") echo 'selected' ;?> value="Tidak Aktif">Tidak Aktif</option>
                         </select>
                       </div>
-                      <div class="input-group my-3">
+                      <div class="input-group mt-1">
                         <label class="col-md-2 form-control-plaintext"></label>
                         <input type="submit" value="Simpan Perubahan" class="btn btn-dark mr-2" name="btn_ubah"/>
+                        <a href="/CBT/admin/admin.php?&aksi=create&halaman=<?php echo $halaman;?>" class="btn btn-light">Batal</a>
                         <!--<input type="submit" value="Simpan Perubahan" class="btn btn-dark"/>-->
                       </div>
                       <p><?php echo isset($pesan) ? $pesan : "" ?></p>
@@ -232,12 +236,11 @@
                   echo "<META HTTP-EQUIV='Refresh' Content='0; URL=/CBT/admin/admin.php?aksi=create&halaman=1'>";
                   tambah($connectdb);
                   tampil_data($connectdb);
+                  exit;
                 }
               ?>
 
             </div>
-            <hr>
-
           </div>
         </div>
         <div class="col-md-3 my-3">

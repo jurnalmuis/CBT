@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
   <div class="main mb-5">
-    <h5 class="text-center mb-3 mt-4"><i class="fas fa-question"></i> Soal</h5>
+    <h5 class="text-center mt-3"><i class="fas fa-question"></i> Soal</h5>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9 my-3">
